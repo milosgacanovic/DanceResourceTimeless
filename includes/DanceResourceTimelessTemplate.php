@@ -477,7 +477,7 @@ class DanceResourceTimelessTemplate extends BaseTemplate {
 		);
 		$logos = SkinModule::getAvailableLogos( $config );
 		if ( $part !== 'image' ) {
-			$wordmarkImage = $this->getLogoImage( $config->get( 'TimelessWordmark' ), true );
+			$wordmarkImage = $this->getLogoImage( $config->get( 'DanceResourceTimelessWordmark' ), true );
 			if ( !$wordmarkImage && isset( $logos['wordmark'] ) ) {
 				$wordmarkData = $logos['wordmark'];
 				$wordmarkImage = Html::element( 'img', [
@@ -514,7 +514,7 @@ class DanceResourceTimelessTemplate extends BaseTemplate {
 
 		}
 		if ( $part !== 'text' ) {
-			$logoImage = $this->getLogoImage( $config->get( 'TimelessLogo' ) );
+			$logoImage = $this->getLogoImage( $config->get( 'DanceResourceTimelessLogo' ) );
 			if ( $logoImage === false ) {
 				$logoSrc = $logos['svg'] ?? $logos['icon'] ?? '';
 				if ( $logoSrc !== '' ) {
