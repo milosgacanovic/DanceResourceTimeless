@@ -985,3 +985,96 @@ body.skin-danceresourcetimeless #mw-footer .visualClear {
     gap: 10px 14px !important;
   }
 }
+
+
+
+
+
+html, body {
+  overscroll-behavior-x: none;
+  overflow-x: hidden;
+}
+body {
+  touch-action: pan-y;
+}
+
+
+
+/* =========================================================
+   Mobile layout fix (skin-danceresourcetimeless)
+   ========================================================= */
+@media (max-width: 859px) {
+
+  body.rootpage-Welcome_to_the_DanceResource_Wiki 
+  .dr-hero-inner figure {
+    margin: 0 auto 20px auto !important;
+    text-align: center !important;
+  }
+
+  body.rootpage-Welcome_to_the_DanceResource_Wiki 
+  .dr-hero-inner figure img {
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  body.skin-danceresourcetimeless #mw-content {
+    padding: 1em 0.5em 1em;
+  }
+ 
+  #menus-cover {
+    display: none !important;
+  }
+
+  body.rootpage-Welcome_to_the_DanceResource_Wiki #mw-site-navigation .sidebar-chunk {
+    opacity: 1;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  #mw-content-container {
+    margin-top: 0em !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   Tablet layout fix (skin-danceresourcetimeless)
+   ========================================================= */
+
+@media screen and (min-width: 860px) and (max-width: 1100px) {
+
+  body {
+    background: #fff;
+  } 
+
+  #mw-content {
+    margin-top: 5rem !important;
+  }
+  
+  #mw-site-navigation {
+     left: 1em !important;
+  }
+
+  #mw-related-navigation {
+    left: 14em !important;
+  }
+
+  body.rootpage-Welcome_to_the_DanceResource_Wiki #mw-site-navigation .sidebar-chunk {
+    opacity: 1;
+  }
+
+  body.skin-danceresourcetimeless .sidebar-chunk > h2 {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #969ca7;
+    margin-bottom: 6px;
+  }
+
+}
+
