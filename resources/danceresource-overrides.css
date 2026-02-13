@@ -1037,6 +1037,28 @@ body {
     margin-top: 0em !important;
   }
 
+  #personal {
+    position: absolute;
+    top: 0.1rem;
+    right: 1rem;
+  }
+
+  #site-tools {
+    position: absolute;
+    top: 0.1rem;
+    right: 1em;
+  }
+
+  #personal-extra {
+    position: absolute;
+    top: 0.5em;
+    right: 6.5rem;
+  }
+
+  #site-navigation h2 {
+    margin-left: 0.5rem;
+  }
+
 }
 
 
