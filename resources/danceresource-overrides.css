@@ -1100,3 +1100,20 @@ body {
 
 }
 
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1340px) {
+  #user-tools {
+    min-width: 16.8em !important;
+    position: relative;
+    left: 2rem;    
+  }
+
+}
