@@ -990,6 +990,58 @@ body.skin-danceresourcetimeless #mw-footer .visualClear {
 
 
 
+
+
+
+
+/* =========================================
+   Yellow WIP Banner
+   ========================================= */
+
+.dr-banner--wip {
+  padding: 14px 16px;
+  margin: 24px 0 30px;
+
+  background: #fff8db;
+  border: 1px solid #f2d98a;
+  border-radius: 10px;
+
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5c4b00;
+}
+
+.dr-banner--wip .dr-banner__cta {
+  margin-top: 8px;
+}
+
+.dr-banner--wip p {
+  margin: 0 !important;
+}
+
+.dr-banner--wip .dr-banner__cta a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dr-banner--wip .dr-banner__cta a:hover {
+  border-bottom-color: rgba(92, 75, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html, body {
   overscroll-behavior-x: none;
   overflow-x: hidden;
@@ -1184,3 +1236,6 @@ body {
   }
 
 }
+
+
+
