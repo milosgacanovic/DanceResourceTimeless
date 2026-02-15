@@ -1004,6 +1004,30 @@ body {
    Mobile layout fix (skin-danceresourcetimeless)
    ========================================================= */
 @media (max-width: 859px) {
+  body.skin-danceresourcetimeless #bodyContent {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body.skin-danceresourcetimeless #bodyContent > #mw-content-text {
+    order: 1 !important;
+  }
+
+  body.skin-danceresourcetimeless #bodyContent > #contentSub {
+    order: 2 !important;
+    position: static !important;
+    top: auto !important;
+    height: auto !important;
+    margin-top: 0.4em !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.skin-danceresourcetimeless #bodyContent > #contentSub > #mw-content-subtitle {
+    position: static !important;
+    display: block !important;
+    opacity: 0.4 !important;
+  }
 
   body.rootpage-Welcome_to_the_DanceResource_Wiki 
   .dr-hero-inner figure {
@@ -1033,8 +1057,41 @@ body {
     overflow-x: hidden;
   }
 
+  .mw-body h1.firstHeading {
+    padding-bottom: 1px;
+  }
+
+  #contentSub {
+    overflow: auto !important;
+    border-top: 1px solid #ddd;
+  }
+
+  #mw-content-subtitle {
+    overflow: auto !important;
+  }
+
+  .subpage-nav {
+    font-size: 0.9rem;
+  }
+
+  .dr-titlebar-tools {
+    top: auto !important;
+  }
+
   #mw-content-container {
     margin-top: 0em !important;
+  }
+
+  body.skin-danceresourcetimeless .dr-subpage-nav-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .dr-subpage-nav-center {
+    display: none;
+  }
+
+  body.skin-danceresourcetimeless .subpage-nav {
+    opacity: 1 !important;
   }
 
   #personal {
@@ -1059,6 +1116,16 @@ body {
     margin-left: 0.5rem;
   }
 
+  figure[typeof~='mw:File/Frameless'].mw-halign-right {
+    width: 100% !important;
+    text-align: center;
+    margin: 1em 0 !important;
+    box-sizing: border-box;
+  }
+
+  figure[typeof~='mw:File/Frameless'].mw-halign-right img {
+    width: 100% !important;
+  }
 }
 
 
