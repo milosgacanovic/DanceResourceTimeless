@@ -1,0 +1,163 @@
+/* DanceResource: mobile list view for sortable resource tables */
+@media ( max-width: 720px ) {
+
+	.dr-cards {
+		margin-top: 8px;
+	}
+
+	/* Sort bar */
+	.dr-cards .dr-sortbar {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: #fff;
+		padding: 8px 0 0 0;
+		margin-bottom: 16px;
+		border-bottom: 1px solid rgba( 0, 0, 0, 0.12 );
+	}
+
+	.dr-cards .dr-sortbar .dr-sortbar-row {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		position: relative;
+	}
+
+	.dr-cards .dr-sort-label {
+		color: inherit;
+		opacity: 0.9;
+	}
+
+	.dr-cards .dr-sort-menu-btn,
+	.dr-cards .dr-sort-dir {
+		font: inherit;
+		background: none;
+		border: 0;
+		padding: 4px 0;
+		color: #36c;
+		cursor: pointer;
+	}
+
+	.dr-cards .dr-sort-caret {
+		width: 0;
+		height: 0;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-top: 5px solid #36c;
+		display: inline-block;
+		margin-left: 8px;
+		position: relative;
+		top: -1px;
+	}
+
+	/* Absolute dropdown overlay */
+	.dr-cards .dr-sort-menu {
+		position: absolute;
+		top: calc( 100% + 0px );
+		left: 0;
+		z-index: 20;
+		background: #fff;
+		border: 1px solid #c8ccd1;
+		border-radius: 4px;
+		box-shadow: 0 6px 18px rgba( 0, 0, 0, 0.08 );
+		padding: 6px 12px;
+		min-width: 220px;
+	}
+
+	.dr-cards .dr-sort-item {
+		display: block;
+		width: 100%;
+		text-align: left;
+		font: inherit;
+		background: none;
+		border: 0;
+		padding: 2px 0;
+		cursor: pointer;
+		color: #36c;
+	}
+
+	.dr-cards .dr-sort-item + .dr-sort-item {
+		border-top: 0 solid rgba( 0, 0, 0, 0.08 );
+	}
+
+	/* Keep wrapper but remove scroll chrome */
+	.dr-cards .content-table-wrapper {
+		display: block !important;
+		overflow: visible !important;
+	}
+
+	.dr-cards .content-table-scrollbar,
+	.dr-cards .content-table-left,
+	.dr-cards .content-table-right {
+		display: none !important;
+	}
+
+	.dr-cards .content-table {
+		display: block !important;
+		overflow: visible !important;
+	}
+
+	/* Hide table header visually */
+	.dr-cards .dr-resource-table > thead {
+		position: absolute !important;
+		left: -9999px !important;
+		top: -9999px !important;
+		width: 1px !important;
+		height: 1px !important;
+		overflow: hidden !important;
+	}
+
+	/* List view styling */
+	.dr-cards .dr-resource-table {
+		width: 100% !important;
+		border: 0;
+		border-collapse: collapse;
+		background: transparent;
+	}
+
+	.dr-cards .dr-resource-table > tbody > tr {
+		border-bottom: 1px solid rgba( 0, 0, 0, 0.12 );
+	}
+
+	.dr-cards .dr-resource-table > tbody > tr:last-child {
+		border-bottom: 0;
+	}
+
+	.dr-cards .dr-resource-table > tbody > tr > td {
+		border: 0 !important;
+		padding: 6px 0 !important;
+		display: grid;
+		grid-template-columns: 90px 1fr;
+		gap: 12px;
+		align-items: start;
+		overflow-wrap: anywhere;
+	}
+
+	.dr-cards .dr-resource-table > tbody > tr > td::before {
+		content: attr( data-label );
+		font-weight: 600;
+		opacity: 0.6;
+	}
+
+	/* Title/link row */
+	.dr-cards .dr-resource-table > tbody > tr > td[data-key="resource"] {
+		grid-template-columns: 1fr;
+		padding-top: 14px !important;
+		padding-bottom: 4px !important;
+		font-weight: 600;
+	}
+
+	.dr-cards .dr-resource-table > tbody > tr > td[data-key="resource"]::before {
+		display: none;
+	}
+
+	/* Notes row */
+	.dr-cards .dr-resource-table > tbody > tr > td[data-key="notes"] {
+		grid-template-columns: 1fr;
+		padding-bottom: 14px !important;
+	}
+
+	.dr-cards .dr-resource-table td p {
+		margin: 0;
+	}
+}

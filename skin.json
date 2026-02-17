@@ -116,6 +116,9 @@
 				},
 				"resources/danceresource-overrides.css": {
 					"media": "screen"
+				},
+				"resources/danceresource-resourceTables.css": {
+					"media": "screen"
 				}
 			},
 			"@NOTE": "Remember to also update variables.less if you change the width cutoffs here. screen-misc.less and mobile.js may also need updating."
@@ -123,7 +126,8 @@
 		"skins.danceresourcetimeless.js": {
 			"scripts": [
 				"resources/main.js",
-				"resources/mobile.js"
+				"resources/mobile.js",
+				"resources/danceresource-resourceTables.js"
 			],
 			"styles": {
 				"resources/main.js.less": {
