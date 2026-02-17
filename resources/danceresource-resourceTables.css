@@ -1,6 +1,19 @@
 /* DanceResource: mobile list view for sortable resource tables */
 @media ( max-width: 720px ) {
 
+	/* Prevent first-frame desktop table/header flash on mobile; JS marks ready quickly. */
+	.dr-cards:not( .dr-resource-ready ) .dr-resource-table {
+		visibility: hidden;
+	}
+
+	.dr-cards:not( .dr-resource-ready ) .dr-resource-table > thead {
+		display: none;
+	}
+
+	html.client-nojs .dr-cards .dr-resource-table {
+		visibility: visible;
+	}
+
 	.dr-cards {
 		margin-top: 8px;
 	}

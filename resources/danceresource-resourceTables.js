@@ -13,17 +13,17 @@
 
 		$root.find( '.dr-cards' ).each( function () {
 			var $wrap = $( this );
+			var $table = $wrap.find( 'table.dr-resource-table.sortable' ).first();
+			if ( !$table.length ) {
+				return;
+			}
+
 			var $bar = $wrap.find( '.dr-sortbar' ).first();
 			if ( !$bar.length ) {
 				return;
 			}
 
 			if ( $bar.data( 'drSortReady' ) ) {
-				return;
-			}
-
-			var $table = $wrap.find( 'table.dr-resource-table.sortable' ).first();
-			if ( !$table.length ) {
 				return;
 			}
 
@@ -173,6 +173,9 @@
 			setMenuText();
 			$dirBtn.hide();
 			resetToDefault();
+
+			// Reveal only after mobile sort/list behavior is fully initialized.
+			$wrap.addClass( 'dr-resource-ready' );
 		} );
 	}
 
