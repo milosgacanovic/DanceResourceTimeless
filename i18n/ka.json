@@ -9,5 +9,6 @@
 	"timeless-namespaces": "სახელთა სივრცეები",
 	"timeless-languages": "ენები",
 	"timeless-view-history": "ისტორია",
-	"timeless-action-undelete": "გააუქმე წაშლა {{PLURAL:$1|ერთი რედაქტირება|$1 რედაქტირება}}"
+	"timeless-action-undelete": "გააუქმე წაშლა {{PLURAL:$1|ერთი რედაქტირება|$1 რედაქტირება}}",
+	"danceresourcetimeless-order-label": "თანმიმდევრობა"
 }

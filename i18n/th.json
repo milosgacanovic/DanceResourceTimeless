@@ -21,5 +21,6 @@
 	"timeless-namespaces": "เนมสเปซ",
 	"timeless-languages": "ภาษา",
 	"timeless-view-history": "ประวัติ",
-	"timeless-action-undelete": "กู้คืน {{PLURAL:$1|}}$1 การแก้ไข"
+	"timeless-action-undelete": "กู้คืน {{PLURAL:$1|}}$1 การแก้ไข",
+	"danceresourcetimeless-order-label": "ลำดับ"
 }

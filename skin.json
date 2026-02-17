@@ -129,6 +129,12 @@
 				"resources/mobile.js",
 				"resources/danceresource-resourceTables.js"
 			],
+			"messages": [
+				"danceresourcetimeless-order-label",
+				"default",
+				"sort-ascending",
+				"sort-descending"
+			],
 			"styles": {
 				"resources/main.js.less": {
 					"media": "screen"
