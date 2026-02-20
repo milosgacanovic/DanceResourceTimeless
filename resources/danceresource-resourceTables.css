@@ -174,3 +174,9 @@
 		margin: 0;
 	}
 }
+
+.smallinfo {
+	font-size: 14px;
+	color: gray;
+	word-break: break-all;
+}
