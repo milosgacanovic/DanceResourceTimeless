@@ -1297,26 +1297,44 @@ body {
     opacity: 1 !important;
   }
 
-  #personal {
-    position: absolute;
-    top: 0.1rem;
-    right: 1rem;
+  #site-tools {
+    display: none !important;
   }
 
-  #site-tools {
+  #personal {
     position: absolute;
-    top: 0.1rem;
-    right: 1em;
+    top: 0;
+    right: 1rem;
   }
 
   #personal-extra {
     position: absolute;
-    top: 0.5em;
-    right: 6.5rem;
+    top: 1.15em;
+    right: 4rem;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px;
+  }
+
+  #dr-theme-toggle {
+    position: absolute;
+    top: 1.1em;
+    right: 7.3em;
+    margin: 0 8px 0 0 !important;
+    opacity: 0.7;
   }
 
   #site-navigation h2 {
     margin-left: 0.5rem;
+    width: 36px !important;
+    height: 36px !important;
+    background-size: 28px 28px !important;
+  }
+
+  /* Hamburger caret: push down and right */
+  #site-navigation h2::after {
+    top: 1em !important;
+    left: 30px !important;
   }
 
   figure[typeof~='mw:File/Frameless'].mw-halign-right {
@@ -1397,6 +1415,7 @@ html[data-theme="dark"] body.skin-danceresourcetimeless {
 }
 
 html[data-theme="dark"] #mw-content,
+html[data-theme="dark"] #mw-content-block,
 html[data-theme="dark"] #mw-content-container {
   background: var(--dr-bg) !important;
   color: var(--dr-text) !important;
@@ -1460,9 +1479,9 @@ html[data-theme="dark"] #p-logo .mw-wiki-logo img {
   filter: invert(1) hue-rotate(180deg) !important;
 }
 
-/* Welcome page hero logo */
+/* Welcome page hero logo — partial invert so white maps to ~#1b1b1f (page bg) */
 html[data-theme="dark"] .dr-hero img {
-  filter: invert(1) hue-rotate(180deg) !important;
+  filter: invert(0.89) hue-rotate(180deg) !important;
 }
 
 /* Sidebar boxes: kill LESS-compiled background/border */
@@ -1532,8 +1551,10 @@ html[data-theme="dark"] #p-language-compact > h3 {
   filter: invert(1) hue-rotate(180deg) !important;
 }
 
-html[data-theme="dark"] #personal > h2::after {
-  filter: invert(1) !important;
+@media screen and (min-width: 851px) {
+  html[data-theme="dark"] #personal > h2::after {
+    filter: invert(1) !important;
+  }
 }
 
 /* Header background */
@@ -1558,6 +1579,7 @@ html[data-theme="dark"] .search-types {
   }
 
   html:not([data-theme]) #mw-content,
+  html:not([data-theme]) #mw-content-block,
   html:not([data-theme]) #mw-content-container {
     background: var(--dr-bg) !important;
     color: var(--dr-text) !important;
@@ -1620,7 +1642,7 @@ html[data-theme="dark"] .search-types {
   }
 
   html:not([data-theme]) .dr-hero img {
-    filter: invert(1) hue-rotate(180deg) !important;
+    filter: invert(0.89) hue-rotate(180deg) !important;
   }
 
   html:not([data-theme]) .sidebar-chunk {
@@ -1674,6 +1696,90 @@ html[data-theme="dark"] .search-types {
   html:not([data-theme]) .search-types {
     background: var(--dr-bg-subtle) !important;
     border-color: var(--dr-border) !important;
+  }
+}
+
+/* =========================================================
+   Dark mode — mobile overrides
+   ========================================================= */
+@media (max-width: 859px) {
+  html[data-theme="dark"] #mw-header-container,
+  html[data-theme="dark"] .sidebar-inner,
+  html[data-theme="dark"] .dropdown {
+    background: var(--dr-bg) !important;
+  }
+
+  html[data-theme="dark"] #mw-content,
+  html[data-theme="dark"] #mw-content-block,
+  html[data-theme="dark"] #mw-content-container,
+  html[data-theme="dark"] #mw-content-wrapper,
+  html[data-theme="dark"] .mw-body {
+    background: var(--dr-bg) !important;
+    border-color: var(--dr-border) !important;
+    color: var(--dr-text) !important;
+  }
+
+  html[data-theme="dark"] .color-right,
+  html[data-theme="dark"] .color-middle,
+  html[data-theme="dark"] .color-left {
+    background: var(--dr-bg) !important;
+  }
+
+  /* Mobile header icons: invert hamburger and user icon */
+  html[data-theme="dark"] #site-navigation h2,
+  html[data-theme="dark"] #personal > h2 {
+    filter: invert(1) !important;
+  }
+
+  /* Mobile header bar background */
+  html[data-theme="dark"] #mw-header-hack {
+    box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Menus overlay */
+  html[data-theme="dark"] #menus-cover {
+    background: #000 !important;
+  }
+
+  /* Toggle positioning handled in general mobile block above */
+}
+
+@media (prefers-color-scheme: dark) {
+  @media (max-width: 859px) {
+    html:not([data-theme]) #mw-header-container,
+    html:not([data-theme]) .sidebar-inner,
+    html:not([data-theme]) .dropdown {
+      background: var(--dr-bg) !important;
+    }
+
+    html:not([data-theme]) #mw-content,
+    html:not([data-theme]) #mw-content-block,
+    html:not([data-theme]) #mw-content-container,
+    html:not([data-theme]) #mw-content-wrapper,
+    html:not([data-theme]) .mw-body {
+      background: var(--dr-bg) !important;
+      border-color: var(--dr-border) !important;
+      color: var(--dr-text) !important;
+    }
+
+    html:not([data-theme]) .color-right,
+    html:not([data-theme]) .color-middle,
+    html:not([data-theme]) .color-left {
+      background: var(--dr-bg) !important;
+    }
+
+    html:not([data-theme]) #site-navigation h2,
+    html:not([data-theme]) #personal > h2 {
+      filter: invert(1) !important;
+    }
+
+    html:not([data-theme]) #mw-header-hack {
+      box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    html:not([data-theme]) #menus-cover {
+      background: #000 !important;
+    }
   }
 }
 
@@ -1765,8 +1871,13 @@ html[data-theme="dark"] .search-types {
   align-items: center !important;
   margin: 0 !important;
   padding: 0 !important;
-  background-image: none !important;
   line-height: normal !important;
+}
+
+@media screen and (min-width: 851px) {
+  #personal > h2 {
+    background-image: none !important;
+  }
 }
 
 
