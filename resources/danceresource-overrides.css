@@ -8,6 +8,135 @@
    Everything else unchanged.
    ========================================================= */
 
+/* =========================================================
+   CSS Custom Properties — Light mode (default)
+   ========================================================= */
+:root {
+  --dr-bg: #fff;
+  --dr-bg-subtle: #f3f4f6;
+  --dr-text: #111827;
+  --dr-text-muted: #6b7280;
+  --dr-border: #e5e7eb;
+  --dr-border-subtle: rgba(0, 0, 0, 0.08);
+  --dr-link: #1d4ed8;
+  --dr-link-red: #d92d20;
+  --dr-heading-border: #d3d3d3;
+  --dr-footer-bg: #fafafa;
+  --dr-footer-border: rgba(0, 0, 0, 0.10);
+  --dr-footer-text: rgba(0, 0, 0, 0.70);
+  --dr-footer-text-muted: rgba(0, 0, 0, 0.60);
+  --dr-footer-link-border: rgba(0, 0, 0, 0.18);
+  --dr-footer-link-border-hover: rgba(0, 0, 0, 0.35);
+  --dr-footer-place-text: rgba(0, 0, 0, 0.72);
+  --dr-warning-bg: #fff8e1;
+  --dr-warning-border: #d9a441;
+  --dr-warning-text: #5c4b00;
+  --dr-wip-bg: #fff8db;
+  --dr-wip-border: #f2d98a;
+  --dr-wip-text: #5c4b00;
+  --dr-card-bg: rgba(255, 255, 255, 0.65);
+  --dr-card-border: rgba(0, 0, 0, 0.08);
+  --dr-card-shadow: rgba(0, 0, 0, 0.03);
+  --dr-star-color: #1d4ed8;
+  --dr-sidebar-heading: #6b7280;
+  --dr-content-border-bottom: #d9d9d9;
+  --dr-breadcrumb-bg: #f3f4f6;
+  --dr-breadcrumb-border: #e5e7eb;
+  --dr-selected-tab-bg: #f3f4f6;
+  --dr-hover-bg: #f3f4f6;
+  --dr-hero-border: rgba(0, 0, 0, 0.10);
+  --dr-logo-text: #111;
+  --dr-content-subtitle-border: #ddd;
+  --dr-tablet-sidebar-heading: #969ca7;
+  --dr-titlebar-hover: #f8f8f8;
+}
+
+/* =========================================================
+   CSS Custom Properties — Dark mode
+   ========================================================= */
+html[data-theme="dark"] {
+  --dr-bg: #1b1b1f;
+  --dr-bg-subtle: #2b2b30;
+  --dr-text: #c8c8cc;
+  --dr-text-muted: #a1a1aa;
+  --dr-border: #2e2e34;
+  --dr-border-subtle: rgba(255, 255, 255, 0.06);
+  --dr-link: #7cb3ff;
+  --dr-link-red: #f87171;
+  --dr-heading-border: #2e2e34;
+  --dr-footer-bg: #161618;
+  --dr-footer-border: rgba(255, 255, 255, 0.08);
+  --dr-footer-text: rgba(255, 255, 255, 0.55);
+  --dr-footer-text-muted: rgba(255, 255, 255, 0.40);
+  --dr-footer-link-border: rgba(255, 255, 255, 0.12);
+  --dr-footer-link-border-hover: rgba(255, 255, 255, 0.25);
+  --dr-footer-place-text: rgba(255, 255, 255, 0.55);
+  --dr-warning-bg: #302c1a;
+  --dr-warning-border: #d9a441;
+  --dr-warning-text: #f5dfa0;
+  --dr-wip-bg: #302c1a;
+  --dr-wip-border: #8a7a3a;
+  --dr-wip-text: #f5dfa0;
+  --dr-card-bg: rgba(43, 43, 48, 0.65);
+  --dr-card-border: rgba(255, 255, 255, 0.06);
+  --dr-card-shadow: rgba(0, 0, 0, 0.20);
+  --dr-star-color: #7cb3ff;
+  --dr-sidebar-heading: #a1a1aa;
+  --dr-content-border-bottom: #2e2e34;
+  --dr-breadcrumb-bg: #2b2b30;
+  --dr-breadcrumb-border: #2e2e34;
+  --dr-selected-tab-bg: #2b2b30;
+  --dr-hover-bg: #2b2b30;
+  --dr-hero-border: rgba(255, 255, 255, 0.06);
+  --dr-logo-text: #c8c8cc;
+  --dr-content-subtitle-border: #2e2e34;
+  --dr-tablet-sidebar-heading: #a1a1aa;
+  --dr-titlebar-hover: #2b2b30;
+}
+
+/* Auto-detect when no explicit preference saved */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --dr-bg: #1b1b1f;
+    --dr-bg-subtle: #2b2b30;
+    --dr-text: #c8c8cc;
+    --dr-text-muted: #a1a1aa;
+    --dr-border: #2e2e34;
+    --dr-border-subtle: rgba(255, 255, 255, 0.06);
+    --dr-link: #7cb3ff;
+    --dr-link-red: #f87171;
+    --dr-heading-border: #2e2e34;
+    --dr-footer-bg: #161618;
+    --dr-footer-border: rgba(255, 255, 255, 0.08);
+    --dr-footer-text: rgba(255, 255, 255, 0.55);
+    --dr-footer-text-muted: rgba(255, 255, 255, 0.40);
+    --dr-footer-link-border: rgba(255, 255, 255, 0.12);
+    --dr-footer-link-border-hover: rgba(255, 255, 255, 0.25);
+    --dr-footer-place-text: rgba(255, 255, 255, 0.55);
+    --dr-warning-bg: #302c1a;
+    --dr-warning-border: #d9a441;
+    --dr-warning-text: #f5dfa0;
+    --dr-wip-bg: #302c1a;
+    --dr-wip-border: #8a7a3a;
+    --dr-wip-text: #f5dfa0;
+    --dr-card-bg: rgba(43, 43, 48, 0.65);
+    --dr-card-border: rgba(255, 255, 255, 0.06);
+    --dr-card-shadow: rgba(0, 0, 0, 0.20);
+    --dr-star-color: #7cb3ff;
+    --dr-sidebar-heading: #a1a1aa;
+    --dr-content-border-bottom: #2e2e34;
+    --dr-breadcrumb-bg: #2b2b30;
+    --dr-breadcrumb-border: #2e2e34;
+    --dr-selected-tab-bg: #2b2b30;
+    --dr-hover-bg: #2b2b30;
+    --dr-hero-border: rgba(255, 255, 255, 0.06);
+    --dr-logo-text: #c8c8cc;
+    --dr-content-subtitle-border: #2e2e34;
+    --dr-tablet-sidebar-heading: #a1a1aa;
+    --dr-titlebar-hover: #2b2b30;
+  }
+}
+
 
 /*  fixing MediaWiki:Common.css font   */
 .page-MediaWiki_Common_css .wikiEditor-ui-view {
@@ -16,7 +145,7 @@
 
 .mw-body h1.firstHeading {
     margin: 0.25em 0 0;
-    border-bottom: solid 3px #d3d3d3;
+    border-bottom: solid 3px var(--dr-heading-border);
     display: block;
 }
 
@@ -72,7 +201,7 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero img {
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki #mw-content {
-  border-top: 1px solid rgba(0,0,0,.08);
+  border-top: 1px solid var(--dr-border-subtle);
 }
 
 
@@ -133,8 +262,8 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero {
   box-shadow: none;
 
   /* editorial separation (not a component box) */
-  border-top: 1px solid rgba(0,0,0,.10);
-  border-bottom: 1px solid rgba(0,0,0,.10);
+  border-top: 1px solid var(--dr-hero-border);
+  border-bottom: 1px solid var(--dr-hero-border);
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero-inner {
@@ -331,10 +460,10 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki #Quick_Start_Guide ~ ul {
 body.rootpage-Welcome_to_the_DanceResource_Wiki #Quick_Start_Guide ~ ul > li {
   margin: 10px 0;
   padding: 10px 12px;
-  border: 1px solid rgba(0,0,0,.08);
+  border: 1px solid var(--dr-card-border);
   border-radius: 12px;
-  background: rgba(255,255,255,.65);
-  box-shadow: 0 8px 20px rgba(0,0,0,.03);
+  background: var(--dr-card-bg);
+  box-shadow: 0 8px 20px var(--dr-card-shadow);
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki #Quick_Start_Guide ~ ul > li b {
@@ -408,8 +537,9 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero {
 .translation-disclaimer {
     width: 100%;
     text-align: center;
-    background: #fff8e1;
-    border: 1px solid #d9a441;
+    background: var(--dr-warning-bg);
+    border: 1px solid var(--dr-warning-border);
+    color: var(--dr-warning-text);
     padding: 10px 12px;
     margin: 0 0 12px 0;
     font-size: 0.92em;
@@ -466,7 +596,7 @@ body.approvedRevs-approved .approvingUser,
 }
 #mw-content-subtitle .subpages a,
 #mw-content-subtitle .subpages a:visited {
-  color: #1d4ed8 !important;
+  color: var(--dr-link) !important;
   text-decoration: none !important;
 }
 #mw-content-subtitle .subpages a:hover { text-decoration: underline !important; }
@@ -501,8 +631,8 @@ body.skin-danceresourcetimeless #mw-footer-container .ts-inner {
 }
 
 body.skin-danceresourcetimeless #mw-header-container {
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
+  background: var(--dr-bg);
+  border-bottom: 1px solid var(--dr-border);
 }
 
 /* =========================
@@ -519,10 +649,10 @@ body.skin-danceresourcetimeless #mw-related-navigation * {
 }
 
 body.skin-danceresourcetimeless #mw-content-container {
-  color: #111827;
+  color: var(--dr-text);
   font-size: 16px;
   line-height: 1.65;
-  border-bottom: solid 4px #d9d9d9;
+  border-bottom: solid 4px var(--dr-content-border-bottom);
 }
 
 /* Request: push content down a bit */
@@ -537,7 +667,7 @@ body.skin-danceresourcetimeless #mw-content-container {
 #p-logo-text a {
   font-variant: normal;
   font-family: 'Linux Libertine', 'Times New Roman', 'Liberation Serif', 'Nimbus Roman', 'Noto Serif', 'Times', serif;
-  color: #111 !important;
+  color: var(--dr-logo-text) !important;
   text-decoration: none !important;
 }
 #p-logo-text a.long {
@@ -562,6 +692,27 @@ body.skin-danceresourcetimeless #searchInput {
 }
 body.skin-danceresourcetimeless #searchInput:focus { outline: none !important; }
 
+/* Search: hide fulltext button, fix go button */
+body.skin-danceresourcetimeless #simpleSearch #mw-searchButton {
+  display: none !important;
+}
+
+body.skin-danceresourcetimeless #simpleSearch #searchButton {
+  height: 100% !important;
+  top: 1px !important;
+  right: 0 !important;
+  width: 2.1em !important;
+}
+
+html[data-theme="dark"] #simpleSearch .searchButton,
+html[data-theme="dark"] #searchButton,
+html[data-theme="dark"] #mw-searchButton {
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21'%3E%3Cg opacity='.8' fill='%23ccc' transform='rotate(-45 8.525 8.386)'%3E%3Cpath d='M8.438.938a7.5 7.5 0 0 0-7.5 7.5 7.5 7.5 0 0 0 7.5 7.5 7.5 7.5 0 0 0 7.5-7.5 7.5 7.5 0 0 0-7.5-7.5m0 2.812a4.69 4.69 0 0 1 4.687 4.688 4.69 4.69 0 0 1-4.687 4.687A4.69 4.69 0 0 1 3.75 8.438 4.69 4.69 0 0 1 8.438 3.75'/%3E%3Crect width='2.813' height='9.265' x='7.031' y='13.125' ry='1.318'/%3E%3C/g%3E%3C/svg%3E") !important;
+  border: 0 !important;
+  filter: none !important;
+}
+
 /* =========================
    Personal / username smaller (support both ids)
    ========================= */
@@ -584,14 +735,14 @@ body.skin-danceresourcetimeless #p-personal h2 span { font-weight: 400 !importan
    ========================= */
 body.skin-danceresourcetimeless a,
 body.skin-danceresourcetimeless a:visited {
-  color: #1d4ed8 !important;
+  color: var(--dr-link) !important;
   text-decoration: none;
 }
 body.skin-danceresourcetimeless a:hover { text-decoration: underline; }
 
 /* Redlinks */
 body.skin-danceresourcetimeless a.new,
-body.skin-danceresourcetimeless a.new:visited { color: #d92d20 !important; }
+body.skin-danceresourcetimeless a.new:visited { color: var(--dr-link-red) !important; }
 
 /* =========================
    Headings: NOT bold, Inter
@@ -636,7 +787,7 @@ body.skin-danceresourcetimeless .sidebar-chunk > h2 {
   font-weight: 500 !important;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: var(--dr-text-muted);
   margin-bottom: 6px;
 }
 
@@ -648,7 +799,7 @@ body.skin-danceresourcetimeless .mw-portlet-body ul li a {
   padding: 4px 0px !important;
   border-radius: 8px;
 }
-body.skin-danceresourcetimeless .mw-portlet-body ul li a:hover { background: #f3f4f6; }
+body.skin-danceresourcetimeless .mw-portlet-body ul li a:hover { background: var(--dr-hover-bg); }
 
 /* Smaller logo above Navigation */
 body.skin-danceresourcetimeless #mw-navigation #p-logo img,
@@ -660,7 +811,7 @@ body.skin-danceresourcetimeless #mw-navigation #p-logo .mw-wiki-logo {
 
 /* Selected Page/Discussion tab subtle */
 body.skin-danceresourcetimeless #p-namespaces li.selected a {
-  background: #f3f4f6 !important;
+  background: var(--dr-selected-tab-bg) !important;
 }
 
 /* Remove icons from Page/Discussion and from Edit/Edit source/History (pseudo + any icon spans) */
@@ -701,16 +852,16 @@ body.skin-danceresourcetimeless #ca-unwatch a::before {
   display: inline-block !important;
   font-size: 14px !important;
   line-height: 1 !important;
-  color: #1d4ed8 !important;
+  color: var(--dr-star-color) !important;
 }
 
 /* =========================
    Footer
    ========================= */
 body.skin-danceresourcetimeless #mw-footer-container {
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
-  color: #6b7280;
+  background: var(--dr-bg);
+  border-top: 1px solid var(--dr-border);
+  color: var(--dr-text-muted);
 }
 
 /* =========================================================
@@ -744,7 +895,7 @@ body.skin-danceresourcetimeless #mw-content-subtitle .subpages {
 
 /* Optional: make selected tab look more "attached" */
 body.skin-danceresourcetimeless #p-namespaces li.selected a {
-  border-bottom: 2px solid #fff !important; /* hides any seam if there is a line below */
+  border-bottom: 2px solid var(--dr-bg) !important; /* hides any seam if there is a line below */
 }
 
 /* =========================================================
@@ -801,7 +952,7 @@ body.skin-danceresourcetimeless #ca-unwatch a::before {
   display: inline-block !important;
   font-size: 14px !important;
   line-height: 1 !important;
-  color: #1d4ed8 !important;
+  color: var(--dr-star-color) !important;
 }
 
 /* Make it look like the other header pills */
@@ -845,10 +996,10 @@ body.skin-danceresourcetimeless #mw-content-subtitle:focus-within {
    ========================================================= */
 
 body.skin-danceresourcetimeless #mw-footer-container {
-  background: #fafafa !important;
-  border-top: 1px solid rgba(0,0,0,.10) !important;
+  background: var(--dr-footer-bg) !important;
+  border-top: 1px solid var(--dr-footer-border) !important;
   box-shadow: none !important;
-  color: rgba(0,0,0,.70) !important;
+  color: var(--dr-footer-text) !important;
 }
 
 body.skin-danceresourcetimeless #mw-footer {
@@ -880,21 +1031,21 @@ body.skin-danceresourcetimeless #footer-info li {
 }
 
 body.skin-danceresourcetimeless #footer-info-lastmod {
-  color: rgba(0,0,0,.60) !important;
+  color: var(--dr-footer-text-muted) !important;
 }
 
 body.skin-danceresourcetimeless #footer-info-copyright {
-  color: rgba(0,0,0,.70) !important;
+  color: var(--dr-footer-text) !important;
 }
 
 body.skin-danceresourcetimeless #footer-info a {
   color: inherit !important;
   text-decoration: none !important;
-  border-bottom: 1px solid rgba(0,0,0,.18) !important;
+  border-bottom: 1px solid var(--dr-footer-link-border) !important;
 }
 
 body.skin-danceresourcetimeless #footer-info a:hover {
-  border-bottom-color: rgba(0,0,0,.35) !important;
+  border-bottom-color: var(--dr-footer-link-border-hover) !important;
 }
 
 /* Center: places */
@@ -914,7 +1065,7 @@ body.skin-danceresourcetimeless #footer-places li {
 }
 
 body.skin-danceresourcetimeless #footer-places a {
-  color: rgba(0,0,0,.72) !important;
+  color: var(--dr-footer-place-text) !important;
   text-decoration: none !important;
 }
 
@@ -1002,13 +1153,13 @@ body.skin-danceresourcetimeless #mw-footer .visualClear {
   padding: 14px 16px;
   margin: 24px 0 30px;
 
-  background: #fff8db;
-  border: 1px solid #f2d98a;
+  background: var(--dr-wip-bg);
+  border: 1px solid var(--dr-wip-border);
   border-radius: 10px;
 
   font-size: 14px;
   line-height: 1.55;
-  color: #5c4b00;
+  color: var(--dr-wip-text);
 }
 
 .dr-banner--wip .dr-banner__cta {
@@ -1025,7 +1176,7 @@ body.skin-danceresourcetimeless #mw-footer .visualClear {
 }
 
 .dr-banner--wip .dr-banner__cta a:hover {
-  border-bottom-color: rgba(92, 75, 0, 0.7);
+  border-bottom-color: var(--dr-wip-text);
 }
 
 
@@ -1115,7 +1266,7 @@ body {
 
   #contentSub {
     overflow: auto !important;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--dr-content-subtitle-border);
   }
 
   #mw-content-subtitle {
@@ -1189,8 +1340,8 @@ body {
 @media screen and (min-width: 860px) and (max-width: 1100px) {
 
   body {
-    background: #fff;
-  } 
+    background: var(--dr-bg);
+  }
 
   #mw-content {
     margin-top: 5rem !important;
@@ -1213,7 +1364,7 @@ body {
     font-weight: 300 !important;
     letter-spacing: 0;
     text-transform: none;
-    color: #969ca7;
+    color: var(--dr-tablet-sidebar-heading);
     margin-bottom: 6px;
   }
 
@@ -1230,11 +1381,392 @@ body {
 
 @media screen and (min-width: 1340px) {
   #user-tools {
-    min-width: 16.8em !important;
     position: relative;
-    left: 2rem;    
+    left: 0.3rem;
   }
 
+}
+
+/* =========================================================
+   Dark mode — global overrides for MediaWiki chrome
+   ========================================================= */
+html[data-theme="dark"] body,
+html[data-theme="dark"] body.skin-danceresourcetimeless {
+  background: var(--dr-bg) !important;
+  color: var(--dr-text) !important;
+}
+
+html[data-theme="dark"] #mw-content,
+html[data-theme="dark"] #mw-content-container {
+  background: var(--dr-bg) !important;
+  color: var(--dr-text) !important;
+  border-color: var(--dr-border) !important;
+}
+
+html[data-theme="dark"] #mw-site-navigation,
+html[data-theme="dark"] #mw-related-navigation {
+  background: var(--dr-bg) !important;
+}
+
+html[data-theme="dark"] input:not(.searchButton),
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+  background: var(--dr-bg-subtle) !important;
+  color: var(--dr-text) !important;
+  border-color: var(--dr-border) !important;
+}
+
+html[data-theme="dark"] #searchInput {
+  color: var(--dr-text) !important;
+}
+
+html[data-theme="dark"] #footer-icons img {
+  filter: grayscale(100%) invert(1) !important;
+}
+
+/* All LESS-compiled borders (from @base80 = #eaecf0) */
+html[data-theme="dark"] #mw-content-container {
+  border-bottom-color: var(--dr-border) !important;
+}
+
+html[data-theme="dark"] .mw-body h1.firstHeading,
+html[data-theme="dark"] .mw-parser-output h2 {
+  border-bottom-color: var(--dr-heading-border) !important;
+}
+
+html[data-theme="dark"] hr {
+  border-color: var(--dr-border) !important;
+  background: var(--dr-border) !important;
+}
+
+html[data-theme="dark"] table,
+html[data-theme="dark"] th,
+html[data-theme="dark"] td {
+  border-color: var(--dr-border) !important;
+}
+
+html[data-theme="dark"] th {
+  background: var(--dr-bg-subtle) !important;
+}
+
+html[data-theme="dark"] .toc {
+  background: var(--dr-bg-subtle) !important;
+  border-color: var(--dr-border) !important;
+}
+
+/* Sidebar logo: invert in dark mode */
+html[data-theme="dark"] #p-logo .timeless-logo img,
+html[data-theme="dark"] #p-logo .mw-wiki-logo img {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Welcome page hero logo */
+html[data-theme="dark"] .dr-hero img {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Sidebar boxes: kill LESS-compiled background/border */
+html[data-theme="dark"] .sidebar-chunk {
+  background: transparent !important;
+  border-color: var(--dr-border) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] .sidebar-inner {
+  background: transparent !important;
+}
+
+/* Sidebar links readable in dark mode */
+html[data-theme="dark"] #mw-site-navigation,
+html[data-theme="dark"] #mw-site-navigation *,
+html[data-theme="dark"] #mw-related-navigation,
+html[data-theme="dark"] #mw-related-navigation * {
+  color: var(--dr-text-muted) !important;
+}
+
+html[data-theme="dark"] #mw-site-navigation a,
+html[data-theme="dark"] #mw-site-navigation a:visited,
+html[data-theme="dark"] #mw-related-navigation a,
+html[data-theme="dark"] #mw-related-navigation a:visited {
+  color: var(--dr-text) !important;
+}
+
+html[data-theme="dark"] #mw-site-navigation a:hover,
+html[data-theme="dark"] #mw-related-navigation a:hover {
+  color: var(--dr-link) !important;
+}
+
+/* Sidebar headings */
+html[data-theme="dark"] .sidebar-chunk > h2,
+html[data-theme="dark"] .sidebar-chunk > h2 * {
+  color: var(--dr-text-muted) !important;
+}
+
+/* Personal tools / user header area */
+html[data-theme="dark"] #personal,
+html[data-theme="dark"] #personal *,
+html[data-theme="dark"] #p-personal,
+html[data-theme="dark"] #p-personal * {
+  color: var(--dr-text-muted) !important;
+}
+
+html[data-theme="dark"] #dr-theme-toggle {
+  color: #ddd !important;
+}
+
+html[data-theme="dark"] #personal-extra,
+html[data-theme="dark"] #personal-extra * {
+  color: #ddd !important;
+}
+
+html[data-theme="dark"] #personal-extra .mw-echo-notifications-badge,
+html[data-theme="dark"] #personal-extra .oo-ui-icon-bell,
+html[data-theme="dark"] #personal-extra .oo-ui-icon-tray,
+html[data-theme="dark"] #personal-extra .mw-ui-icon-bell:before,
+html[data-theme="dark"] #personal-extra .mw-ui-icon-tray:before,
+html[data-theme="dark"] #personal-extra a:before {
+  filter: invert(1) !important;
+}
+
+html[data-theme="dark"] #p-language-compact > h3 {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+html[data-theme="dark"] #personal > h2::after {
+  filter: invert(1) !important;
+}
+
+/* Header background */
+html[data-theme="dark"] #mw-header-container {
+  background: var(--dr-bg) !important;
+  border-bottom-color: var(--dr-border) !important;
+}
+
+/* Search box contrast */
+html[data-theme="dark"] #simpleSearch,
+html[data-theme="dark"] #searchform,
+html[data-theme="dark"] .search-types {
+  background: var(--dr-bg-subtle) !important;
+  border-color: var(--dr-border) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) body,
+  html:not([data-theme]) body.skin-danceresourcetimeless {
+    background: var(--dr-bg) !important;
+    color: var(--dr-text) !important;
+  }
+
+  html:not([data-theme]) #mw-content,
+  html:not([data-theme]) #mw-content-container {
+    background: var(--dr-bg) !important;
+    color: var(--dr-text) !important;
+    border-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) #mw-site-navigation,
+  html:not([data-theme]) #mw-related-navigation {
+    background: var(--dr-bg) !important;
+  }
+
+  html:not([data-theme]) input:not(.searchButton),
+  html:not([data-theme]) textarea,
+  html:not([data-theme]) select {
+    background: var(--dr-bg-subtle) !important;
+    color: var(--dr-text) !important;
+    border-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) #searchInput {
+    color: var(--dr-text) !important;
+  }
+
+  html:not([data-theme]) #footer-icons img {
+    filter: grayscale(100%) invert(1) !important;
+  }
+
+  html:not([data-theme]) #mw-content-container {
+    border-bottom-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) .mw-body h1.firstHeading,
+  html:not([data-theme]) .mw-parser-output h2 {
+    border-bottom-color: var(--dr-heading-border) !important;
+  }
+
+  html:not([data-theme]) hr {
+    border-color: var(--dr-border) !important;
+    background: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) table,
+  html:not([data-theme]) th,
+  html:not([data-theme]) td {
+    border-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) th {
+    background: var(--dr-bg-subtle) !important;
+  }
+
+  html:not([data-theme]) .toc {
+    background: var(--dr-bg-subtle) !important;
+    border-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) #p-logo .timeless-logo img,
+  html:not([data-theme]) #p-logo .mw-wiki-logo img {
+    filter: invert(1) hue-rotate(180deg) !important;
+  }
+
+  html:not([data-theme]) .dr-hero img {
+    filter: invert(1) hue-rotate(180deg) !important;
+  }
+
+  html:not([data-theme]) .sidebar-chunk {
+    background: transparent !important;
+    border-color: var(--dr-border) !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) .sidebar-inner {
+    background: transparent !important;
+  }
+
+  html:not([data-theme]) #mw-site-navigation,
+  html:not([data-theme]) #mw-site-navigation *,
+  html:not([data-theme]) #mw-related-navigation,
+  html:not([data-theme]) #mw-related-navigation * {
+    color: var(--dr-text-muted) !important;
+  }
+
+  html:not([data-theme]) #mw-site-navigation a,
+  html:not([data-theme]) #mw-site-navigation a:visited,
+  html:not([data-theme]) #mw-related-navigation a,
+  html:not([data-theme]) #mw-related-navigation a:visited {
+    color: var(--dr-text) !important;
+  }
+
+  html:not([data-theme]) #mw-site-navigation a:hover,
+  html:not([data-theme]) #mw-related-navigation a:hover {
+    color: var(--dr-link) !important;
+  }
+
+  html:not([data-theme]) .sidebar-chunk > h2,
+  html:not([data-theme]) .sidebar-chunk > h2 * {
+    color: var(--dr-text-muted) !important;
+  }
+
+  html:not([data-theme]) #personal,
+  html:not([data-theme]) #personal *,
+  html:not([data-theme]) #p-personal,
+  html:not([data-theme]) #p-personal * {
+    color: var(--dr-text-muted) !important;
+  }
+
+  html:not([data-theme]) #mw-header-container {
+    background: var(--dr-bg) !important;
+    border-bottom-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) #simpleSearch,
+  html:not([data-theme]) #searchform,
+  html:not([data-theme]) .search-types {
+    background: var(--dr-bg-subtle) !important;
+    border-color: var(--dr-border) !important;
+  }
+}
+
+/* =========================================================
+   Theme toggle button
+   ========================================================= */
+#dr-theme-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px !important;
+  margin: 0 6px 0 0 !important;
+  border: none !important;
+  background: transparent !important;
+  vertical-align: middle;
+  color: inherit;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+  line-height: 1 !important;
+}
+
+#dr-theme-toggle:hover {
+  opacity: 1;
+}
+
+#dr-theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+/* Unified header icon row: align toggle, echo icons, and username */
+@media screen and (min-width: 851px) {
+  #user-tools {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  #dr-theme-toggle {
+    order: 1;
+    margin: 0 12px 0 12px !important;
+  }
+
+  #personal-extra {
+    float: none !important;
+    display: flex !important;
+    align-items: center !important;
+    order: 2;
+    margin: 0 8px 0 0 !important;
+  }
+
+  #personal {
+    order: 3;
+    padding-left: 0 !important;
+  }
+}
+
+#personal-extra ul {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#personal-extra li {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 1px !important;
+}
+
+/* Shrink notification badge icons */
+#personal-extra .mw-echo-notifications-badge {
+  width: 18px !important;
+  height: 18px !important;
+  font-size: 11px !important;
+  line-height: 18px !important;
+  background-size: contain !important;
+}
+
+#personal-extra a {
+  font-size: 0.8em !important;
+}
+
+/* Username heading: vertically center with icons */
+#personal > h2 {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-image: none !important;
+  line-height: normal !important;
 }
 
 

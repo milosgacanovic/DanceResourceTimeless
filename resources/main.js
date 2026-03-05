@@ -1,3 +1,27 @@
+/* =========================================================
+   Dark mode: apply theme immediately (before paint)
+   ========================================================= */
+( function () {
+	var saved = localStorage.getItem( 'dr-theme' );
+	if ( saved ) {
+		document.documentElement.setAttribute( 'data-theme', saved );
+	} else if ( window.matchMedia && window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) {
+		// No explicit preference — let CSS @media handle it (no data-theme attribute)
+	} else {
+		document.documentElement.setAttribute( 'data-theme', 'light' );
+	}
+
+	// Listen for system preference changes (only when no saved choice)
+	if ( window.matchMedia ) {
+		window.matchMedia( '(prefers-color-scheme: dark)' ).addEventListener( 'change', function ( e ) {
+			if ( !localStorage.getItem( 'dr-theme' ) ) {
+				// Remove attribute so CSS @media rules take effect
+				document.documentElement.removeAttribute( 'data-theme' );
+			}
+		} );
+	}
+}() );
+
 $( function () {
 	// sidebar-chunk only applies to desktop-small, but the toggles are hidden at
 	// other resolutions regardless and the css overrides any visible effects.
@@ -42,6 +66,62 @@ $( function () {
 			closeOpen();
 		}
 	} );
+
+	/* =========================================================
+	   Dark mode toggle button (matches www.danceresource.org)
+	   ========================================================= */
+	( function () {
+		var sunSvg = '<svg class="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+		var moonSvg = '<svg class="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+		var toggle = document.createElement( 'button' );
+		toggle.id = 'dr-theme-toggle';
+		toggle.title = 'Toggle dark mode';
+		toggle.setAttribute( 'aria-label', 'Toggle dark mode' );
+		toggle.innerHTML = sunSvg + moonSvg;
+
+		function isCurrentlyDark() {
+			var attr = document.documentElement.getAttribute( 'data-theme' );
+			if ( attr === 'dark' ) {
+				return true;
+			}
+			if ( attr === 'light' ) {
+				return false;
+			}
+			return window.matchMedia && window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
+		}
+
+		function syncIcons( isDark ) {
+			var iconLight = toggle.querySelector( '.theme-icon-light' );
+			var iconDark = toggle.querySelector( '.theme-icon-dark' );
+			// Sun visible in light mode, moon visible in dark mode
+			if ( iconLight ) {
+				iconLight.style.display = isDark ? 'none' : '';
+			}
+			if ( iconDark ) {
+				iconDark.style.display = isDark ? '' : 'none';
+			}
+		}
+
+		syncIcons( isCurrentlyDark() );
+
+		toggle.addEventListener( 'click', function ( e ) {
+			e.stopPropagation();
+			var nowDark = !isCurrentlyDark();
+			document.documentElement.setAttribute( 'data-theme', nowDark ? 'dark' : 'light' );
+			localStorage.setItem( 'dr-theme', nowDark ? 'dark' : 'light' );
+			syncIcons( nowDark );
+		} );
+
+		// Insert left of #personal inside #user-tools
+		var userTools = document.getElementById( 'user-tools' );
+		var personal = document.getElementById( 'personal' );
+		if ( userTools && personal ) {
+			userTools.insertBefore( toggle, personal );
+		} else if ( personal ) {
+			personal.parentNode.insertBefore( toggle, personal );
+		}
+	}() );
 } );
 
 mw.hook( 'wikipage.content' ).add( function ( $content ) {
