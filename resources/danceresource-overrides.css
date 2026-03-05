@@ -1324,6 +1324,11 @@ body {
     opacity: 0.7;
   }
 
+  /* Logged out: no personal/extra icons, move toggle to right edge */
+  body:not(.mw-editable) #dr-theme-toggle {
+    right: 4rem;
+  }
+
   #site-navigation h2 {
     margin-left: 0.5rem;
     width: 36px !important;
