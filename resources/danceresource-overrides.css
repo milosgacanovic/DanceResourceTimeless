@@ -691,6 +691,9 @@ body.skin-danceresourcetimeless #searchInput {
   font-family: inherit !important;
 }
 body.skin-danceresourcetimeless #searchInput:focus { outline: none !important; }
+body.skin-danceresourcetimeless #personal,
+body.skin-danceresourcetimeless #personal > h2,
+body.skin-danceresourcetimeless #dr-theme-toggle { outline: none !important; }
 
 /* Search: hide fulltext button, fix go button */
 body.skin-danceresourcetimeless #simpleSearch #mw-searchButton {
@@ -1193,13 +1196,6 @@ body.skin-danceresourcetimeless #mw-footer .visualClear {
 
 
 
-html, body {
-  overscroll-behavior-x: none;
-  overflow-x: hidden;
-}
-body {
-  touch-action: pan-y;
-}
 
 
 
