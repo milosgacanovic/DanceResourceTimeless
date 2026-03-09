@@ -12,128 +12,164 @@
    CSS Custom Properties — Light mode (default)
    ========================================================= */
 :root {
-  --dr-bg: #fff;
-  --dr-bg-subtle: #f3f4f6;
-  --dr-text: #111827;
-  --dr-text-muted: #6b7280;
-  --dr-border: #e5e7eb;
+  --dr-bg: #EDE7DF;
+  --dr-bg-subtle: #E3DCD3;
+  --dr-bg-alt: #E3DCD3;
+  --dr-text: #333;
+  --dr-text-secondary: #5f6368;
+  --dr-text-muted: #b3b3b3;
+  --dr-border: #d6cfc6;
   --dr-border-subtle: rgba(0, 0, 0, 0.08);
-  --dr-link: #1d4ed8;
+  --dr-circle-border: #c4bdb4;
+  --dr-border-muted: #d1d1d1;
+  --dr-link: #0f8a4a;
   --dr-link-red: #d92d20;
-  --dr-heading-border: #d3d3d3;
-  --dr-footer-bg: #fafafa;
+  --dr-heading-border: #d6cfc6;
+  --dr-footer-bg: #d5cdc2;
   --dr-footer-border: rgba(0, 0, 0, 0.10);
-  --dr-footer-text: rgba(0, 0, 0, 0.70);
-  --dr-footer-text-muted: rgba(0, 0, 0, 0.60);
+  --dr-footer-text: rgba(51, 51, 51, 0.70);
+  --dr-footer-text-muted: rgba(51, 51, 51, 0.60);
   --dr-footer-link-border: rgba(0, 0, 0, 0.18);
   --dr-footer-link-border-hover: rgba(0, 0, 0, 0.35);
-  --dr-footer-place-text: rgba(0, 0, 0, 0.72);
+  --dr-footer-place-text: rgba(51, 51, 51, 0.72);
   --dr-warning-bg: #fff8e1;
   --dr-warning-border: #d9a441;
   --dr-warning-text: #5c4b00;
   --dr-wip-bg: #fff8db;
   --dr-wip-border: #f2d98a;
   --dr-wip-text: #5c4b00;
-  --dr-card-bg: rgba(255, 255, 255, 0.65);
+  --dr-card-bg: rgba(237, 231, 223, 0.65);
   --dr-card-border: rgba(0, 0, 0, 0.08);
   --dr-card-shadow: rgba(0, 0, 0, 0.03);
-  --dr-star-color: #1d4ed8;
-  --dr-sidebar-heading: #6b7280;
-  --dr-content-border-bottom: #d9d9d9;
-  --dr-breadcrumb-bg: #f3f4f6;
-  --dr-breadcrumb-border: #e5e7eb;
-  --dr-selected-tab-bg: #f3f4f6;
-  --dr-hover-bg: #f3f4f6;
+  --dr-star-color: #0f8a4a;
+  --dr-sidebar-heading: #5f6368;
+  --dr-content-border-bottom: #d6cfc6;
+  --dr-breadcrumb-bg: #E3DCD3;
+  --dr-breadcrumb-border: #d6cfc6;
+  --dr-selected-tab-bg: #E3DCD3;
+  --dr-hover-bg: #E3DCD3;
   --dr-hero-border: rgba(0, 0, 0, 0.10);
-  --dr-logo-text: #111;
-  --dr-content-subtitle-border: #ddd;
-  --dr-tablet-sidebar-heading: #969ca7;
-  --dr-titlebar-hover: #f8f8f8;
+  --dr-logo-text: #333;
+  --dr-content-subtitle-border: #d6cfc6;
+  --dr-tablet-sidebar-heading: #b3b3b3;
+  --dr-titlebar-hover: #E3DCD3;
+  --dr-trigger-color: #2f2f2f;
+  --dr-trigger-hover: #E3DCD3;
+  --dr-arrow-color: #0f8a4a;
+  --dr-contribute-note: #444;
+  --bs-primary: #0f8a4a;
+  --bs-link-hover: #0a6e3a;
+  --dr-accent: #daa86d;
+  --dr-accent-hover: #c4904f;
 }
 
 /* =========================================================
    CSS Custom Properties — Dark mode
    ========================================================= */
 html[data-theme="dark"] {
-  --dr-bg: #1b1b1f;
-  --dr-bg-subtle: #2b2b30;
-  --dr-text: #c8c8cc;
-  --dr-text-muted: #a1a1aa;
-  --dr-border: #2e2e34;
+  --dr-bg: #181714;
+  --dr-bg-subtle: #1e1c17;
+  --dr-bg-alt: #1e1c17;
+  --dr-text: #c4c1bc;
+  --dr-text-secondary: #9a9088;
+  --dr-text-muted: #6a6158;
+  --dr-border: #312e26;
   --dr-border-subtle: rgba(255, 255, 255, 0.06);
-  --dr-link: #7cb3ff;
-  --dr-link-red: #f87171;
-  --dr-heading-border: #2e2e34;
-  --dr-footer-bg: #161618;
+  --dr-circle-border: #3a3830;
+  --dr-border-muted: #333;
+  --dr-link: #408657;
+  --dr-link-red: #ff6b6b;
+  --dr-heading-border: #312e26;
+  --dr-footer-bg: #100f0c;
   --dr-footer-border: rgba(255, 255, 255, 0.08);
-  --dr-footer-text: rgba(255, 255, 255, 0.55);
-  --dr-footer-text-muted: rgba(255, 255, 255, 0.40);
+  --dr-footer-text: rgba(196, 193, 188, 0.70);
+  --dr-footer-text-muted: rgba(196, 193, 188, 0.55);
   --dr-footer-link-border: rgba(255, 255, 255, 0.12);
   --dr-footer-link-border-hover: rgba(255, 255, 255, 0.25);
-  --dr-footer-place-text: rgba(255, 255, 255, 0.55);
+  --dr-footer-place-text: rgba(196, 193, 188, 0.70);
   --dr-warning-bg: #302c1a;
   --dr-warning-border: #d9a441;
   --dr-warning-text: #f5dfa0;
   --dr-wip-bg: #302c1a;
   --dr-wip-border: #8a7a3a;
   --dr-wip-text: #f5dfa0;
-  --dr-card-bg: rgba(43, 43, 48, 0.65);
+  --dr-card-bg: rgba(30, 28, 23, 0.65);
   --dr-card-border: rgba(255, 255, 255, 0.06);
   --dr-card-shadow: rgba(0, 0, 0, 0.20);
-  --dr-star-color: #7cb3ff;
-  --dr-sidebar-heading: #a1a1aa;
-  --dr-content-border-bottom: #2e2e34;
-  --dr-breadcrumb-bg: #2b2b30;
-  --dr-breadcrumb-border: #2e2e34;
-  --dr-selected-tab-bg: #2b2b30;
-  --dr-hover-bg: #2b2b30;
+  --dr-star-color: #408657;
+  --dr-sidebar-heading: #9a9088;
+  --dr-content-border-bottom: #312e26;
+  --dr-breadcrumb-bg: #1e1c17;
+  --dr-breadcrumb-border: #312e26;
+  --dr-selected-tab-bg: #1e1c17;
+  --dr-hover-bg: #1e1c17;
   --dr-hero-border: rgba(255, 255, 255, 0.06);
-  --dr-logo-text: #c8c8cc;
-  --dr-content-subtitle-border: #2e2e34;
-  --dr-tablet-sidebar-heading: #a1a1aa;
-  --dr-titlebar-hover: #2b2b30;
+  --dr-logo-text: #c4c1bc;
+  --dr-content-subtitle-border: #312e26;
+  --dr-tablet-sidebar-heading: #6a6158;
+  --dr-titlebar-hover: #1e1c17;
+  --dr-trigger-color: #c4c1bc;
+  --dr-trigger-hover: #2c2a23;
+  --dr-arrow-color: #408657;
+  --dr-contribute-note: #9a9088;
+  --bs-primary: #408657;
+  --bs-link-hover: #4aa569;
+  --dr-accent: #e5b87a;
+  --dr-accent-hover: #d4a060;
 }
 
 /* Auto-detect when no explicit preference saved */
 @media (prefers-color-scheme: dark) {
   html:not([data-theme]) {
-    --dr-bg: #1b1b1f;
-    --dr-bg-subtle: #2b2b30;
-    --dr-text: #c8c8cc;
-    --dr-text-muted: #a1a1aa;
-    --dr-border: #2e2e34;
+    --dr-bg: #181714;
+    --dr-bg-subtle: #1e1c17;
+    --dr-bg-alt: #1e1c17;
+    --dr-text: #c4c1bc;
+    --dr-text-secondary: #9a9088;
+    --dr-text-muted: #6a6158;
+    --dr-border: #312e26;
     --dr-border-subtle: rgba(255, 255, 255, 0.06);
-    --dr-link: #7cb3ff;
-    --dr-link-red: #f87171;
-    --dr-heading-border: #2e2e34;
-    --dr-footer-bg: #161618;
+    --dr-circle-border: #3a3830;
+    --dr-border-muted: #333;
+    --dr-link: #408657;
+    --dr-link-red: #ff6b6b;
+    --dr-heading-border: #312e26;
+    --dr-footer-bg: #100f0c;
     --dr-footer-border: rgba(255, 255, 255, 0.08);
-    --dr-footer-text: rgba(255, 255, 255, 0.55);
-    --dr-footer-text-muted: rgba(255, 255, 255, 0.40);
+    --dr-footer-text: rgba(196, 193, 188, 0.70);
+    --dr-footer-text-muted: rgba(196, 193, 188, 0.55);
     --dr-footer-link-border: rgba(255, 255, 255, 0.12);
     --dr-footer-link-border-hover: rgba(255, 255, 255, 0.25);
-    --dr-footer-place-text: rgba(255, 255, 255, 0.55);
+    --dr-footer-place-text: rgba(196, 193, 188, 0.70);
     --dr-warning-bg: #302c1a;
     --dr-warning-border: #d9a441;
     --dr-warning-text: #f5dfa0;
     --dr-wip-bg: #302c1a;
     --dr-wip-border: #8a7a3a;
     --dr-wip-text: #f5dfa0;
-    --dr-card-bg: rgba(43, 43, 48, 0.65);
+    --dr-card-bg: rgba(30, 28, 23, 0.65);
     --dr-card-border: rgba(255, 255, 255, 0.06);
     --dr-card-shadow: rgba(0, 0, 0, 0.20);
-    --dr-star-color: #7cb3ff;
-    --dr-sidebar-heading: #a1a1aa;
-    --dr-content-border-bottom: #2e2e34;
-    --dr-breadcrumb-bg: #2b2b30;
-    --dr-breadcrumb-border: #2e2e34;
-    --dr-selected-tab-bg: #2b2b30;
-    --dr-hover-bg: #2b2b30;
+    --dr-star-color: #408657;
+    --dr-sidebar-heading: #9a9088;
+    --dr-content-border-bottom: #312e26;
+    --dr-breadcrumb-bg: #1e1c17;
+    --dr-breadcrumb-border: #312e26;
+    --dr-selected-tab-bg: #1e1c17;
+    --dr-hover-bg: #1e1c17;
     --dr-hero-border: rgba(255, 255, 255, 0.06);
-    --dr-logo-text: #c8c8cc;
-    --dr-content-subtitle-border: #2e2e34;
-    --dr-tablet-sidebar-heading: #a1a1aa;
-    --dr-titlebar-hover: #2b2b30;
+    --dr-logo-text: #c4c1bc;
+    --dr-content-subtitle-border: #312e26;
+    --dr-tablet-sidebar-heading: #6a6158;
+    --dr-titlebar-hover: #1e1c17;
+    --dr-trigger-color: #c4c1bc;
+    --dr-trigger-hover: #2c2a23;
+    --dr-arrow-color: #408657;
+    --dr-contribute-note: #9a9088;
+    --bs-primary: #408657;
+    --bs-link-hover: #4aa569;
+    --dr-accent: #e5b87a;
+    --dr-accent-hover: #d4a060;
   }
 }
 
@@ -200,9 +236,6 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero img {
   opacity: 0.82;
 }
 
-body.rootpage-Welcome_to_the_DanceResource_Wiki #mw-content {
-  border-top: 1px solid var(--dr-border-subtle);
-}
 
 
 /* ---------------------------------
@@ -302,6 +335,16 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero-inner {
    --------------------------------- */
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero figure {
   margin: 0 0 12px;
+  mix-blend-mode: multiply;
+  background: transparent !important;
+}
+
+body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero figure *,
+body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero .thumbinner,
+body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero .thumb {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero img {
@@ -620,6 +663,24 @@ body.skin-danceresourcetimeless #mw-content {
 }
 
 body.skin-danceresourcetimeless #mw-content {
+  background: var(--dr-bg) !important;
+  border: none !important;
+}
+
+body.skin-danceresourcetimeless #mw-content-container {
+  background: var(--dr-bg-alt) !important;
+}
+
+body.skin-danceresourcetimeless #mw-site-navigation,
+body.skin-danceresourcetimeless #mw-related-navigation {
+  background: var(--dr-bg-alt) !important;
+}
+
+body.skin-danceresourcetimeless .mw-body {
+  background: var(--dr-bg) !important;
+}
+
+body.skin-danceresourcetimeless #mw-content {
   padding: 1em 2em 1.3em;
 }
 
@@ -652,7 +713,7 @@ body.skin-danceresourcetimeless #mw-content-container {
   color: var(--dr-text);
   font-size: 16px;
   line-height: 1.65;
-  border-bottom: solid 4px var(--dr-content-border-bottom);
+  border-bottom: solid 1px var(--dr-content-border-bottom);
 }
 
 /* Request: push content down a bit */
@@ -685,7 +746,7 @@ body.skin-danceresourcetimeless #searchInput {
   height: 2.1em !important;
   padding: 0.5em !important;
   box-shadow: none !important;
-  background: transparent !important;
+  background: var(--dr-bg-alt) !important;
   width: 100% !important;
   min-height: 0 !important;
   font-family: inherit !important;
@@ -785,6 +846,24 @@ body.skin-danceresourcetimeless .mw-portlet {
   box-shadow: none !important;
 }
 
+body.skin-danceresourcetimeless .sidebar-chunk {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.skin-danceresourcetimeless #mw-site-navigation a,
+body.skin-danceresourcetimeless #mw-site-navigation a:visited,
+body.skin-danceresourcetimeless #mw-related-navigation a,
+body.skin-danceresourcetimeless #mw-related-navigation a:visited {
+  color: var(--dr-text) !important;
+}
+
+body.skin-danceresourcetimeless #mw-site-navigation a:hover,
+body.skin-danceresourcetimeless #mw-related-navigation a:hover {
+  color: var(--dr-link) !important;
+}
+
 body.skin-danceresourcetimeless .sidebar-chunk > h2 {
   font-size: 12px;
   font-weight: 500 !important;
@@ -810,6 +889,13 @@ body.skin-danceresourcetimeless #mw-navigation #p-logo .mw-wiki-logo {
   max-width: 92px !important;
   height: auto !important;
   margin-bottom: 6px !important;
+}
+
+/* Logo blend — light mode: multiply makes white areas disappear into warm bg */
+body.skin-danceresourcetimeless #mw-navigation #p-logo a,
+body.skin-danceresourcetimeless #mw-navigation #p-logo a img {
+  mix-blend-mode: multiply !important;
+  background: transparent !important;
 }
 
 /* Selected Page/Discussion tab subtle */
@@ -1404,6 +1490,7 @@ body.skin-danceresourcetimeless #mw-footer .visualClear {
     left: 0.3rem;
   }
 
+
 }
 
 /* =========================================================
@@ -1415,17 +1502,20 @@ html[data-theme="dark"] body.skin-danceresourcetimeless {
   color: var(--dr-text) !important;
 }
 
-html[data-theme="dark"] #mw-content,
+html[data-theme="dark"] #mw-content {
+  background: var(--dr-bg) !important;
+}
+
 html[data-theme="dark"] #mw-content-block,
 html[data-theme="dark"] #mw-content-container {
-  background: var(--dr-bg) !important;
+  background: var(--dr-bg-alt) !important;
   color: var(--dr-text) !important;
   border-color: var(--dr-border) !important;
 }
 
 html[data-theme="dark"] #mw-site-navigation,
 html[data-theme="dark"] #mw-related-navigation {
-  background: var(--dr-bg) !important;
+  background: var(--dr-bg-alt) !important;
 }
 
 html[data-theme="dark"] input:not(.searchButton),
@@ -1474,15 +1564,29 @@ html[data-theme="dark"] .toc {
   border-color: var(--dr-border) !important;
 }
 
-/* Sidebar logo: invert in dark mode */
-html[data-theme="dark"] #p-logo .timeless-logo img,
-html[data-theme="dark"] #p-logo .mw-wiki-logo img {
-  filter: invert(1) hue-rotate(180deg) !important;
+/* Sidebar logo: invert + screen blend in dark mode */
+html[data-theme="dark"] #mw-navigation #p-logo a,
+html[data-theme="dark"] #mw-navigation #p-logo a img {
+  filter: invert(1) !important;
+  mix-blend-mode: screen !important;
+  background: transparent !important;
 }
 
-/* Welcome page hero logo — partial invert so white maps to ~#1b1b1f (page bg) */
+/* Welcome page hero logo — invert img, screen-blend the figure */
+html[data-theme="dark"] .dr-hero figure {
+  mix-blend-mode: screen !important;
+  background: transparent !important;
+}
+
 html[data-theme="dark"] .dr-hero img {
-  filter: invert(0.89) hue-rotate(180deg) !important;
+  filter: invert(1) !important;
+}
+
+html[data-theme="dark"] .dr-hero .thumbinner,
+html[data-theme="dark"] .dr-hero .thumb,
+html[data-theme="dark"] .dr-hero figure * {
+  background: transparent !important;
+  border: none !important;
 }
 
 /* Sidebar boxes: kill LESS-compiled background/border */
@@ -1568,7 +1672,7 @@ html[data-theme="dark"] #mw-header-container {
 html[data-theme="dark"] #simpleSearch,
 html[data-theme="dark"] #searchform,
 html[data-theme="dark"] .search-types {
-  background: var(--dr-bg-subtle) !important;
+  background: var(--dr-bg-alt) !important;
   border-color: var(--dr-border) !important;
 }
 
@@ -1579,17 +1683,20 @@ html[data-theme="dark"] .search-types {
     color: var(--dr-text) !important;
   }
 
-  html:not([data-theme]) #mw-content,
+  html:not([data-theme]) #mw-content {
+    background: var(--dr-bg) !important;
+  }
+
   html:not([data-theme]) #mw-content-block,
   html:not([data-theme]) #mw-content-container {
-    background: var(--dr-bg) !important;
+    background: var(--dr-bg-alt) !important;
     color: var(--dr-text) !important;
     border-color: var(--dr-border) !important;
   }
 
   html:not([data-theme]) #mw-site-navigation,
   html:not([data-theme]) #mw-related-navigation {
-    background: var(--dr-bg) !important;
+    background: var(--dr-bg-alt) !important;
   }
 
   html:not([data-theme]) input:not(.searchButton),
@@ -1637,13 +1744,27 @@ html[data-theme="dark"] .search-types {
     border-color: var(--dr-border) !important;
   }
 
-  html:not([data-theme]) #p-logo .timeless-logo img,
-  html:not([data-theme]) #p-logo .mw-wiki-logo img {
-    filter: invert(1) hue-rotate(180deg) !important;
+  html:not([data-theme]) #mw-navigation #p-logo a,
+  html:not([data-theme]) #mw-navigation #p-logo a img {
+    filter: invert(1) !important;
+    mix-blend-mode: screen !important;
+    background: transparent !important;
+  }
+
+  html:not([data-theme]) .dr-hero figure {
+    mix-blend-mode: screen !important;
+    background: transparent !important;
   }
 
   html:not([data-theme]) .dr-hero img {
-    filter: invert(0.89) hue-rotate(180deg) !important;
+    filter: invert(1) !important;
+  }
+
+  html:not([data-theme]) .dr-hero .thumbinner,
+  html:not([data-theme]) .dr-hero .thumb,
+  html:not([data-theme]) .dr-hero figure * {
+    background: transparent !important;
+    border: none !important;
   }
 
   html:not([data-theme]) .sidebar-chunk {
@@ -1711,11 +1832,14 @@ html[data-theme="dark"] .search-types {
   }
 
   html[data-theme="dark"] #mw-content,
-  html[data-theme="dark"] #mw-content-block,
-  html[data-theme="dark"] #mw-content-container,
-  html[data-theme="dark"] #mw-content-wrapper,
   html[data-theme="dark"] .mw-body {
     background: var(--dr-bg) !important;
+  }
+
+  html[data-theme="dark"] #mw-content-block,
+  html[data-theme="dark"] #mw-content-container,
+  html[data-theme="dark"] #mw-content-wrapper {
+    background: var(--dr-bg-alt) !important;
     border-color: var(--dr-border) !important;
     color: var(--dr-text) !important;
   }
@@ -1754,11 +1878,14 @@ html[data-theme="dark"] .search-types {
     }
 
     html:not([data-theme]) #mw-content,
-    html:not([data-theme]) #mw-content-block,
-    html:not([data-theme]) #mw-content-container,
-    html:not([data-theme]) #mw-content-wrapper,
     html:not([data-theme]) .mw-body {
       background: var(--dr-bg) !important;
+    }
+
+    html:not([data-theme]) #mw-content-block,
+    html:not([data-theme]) #mw-content-container,
+    html:not([data-theme]) #mw-content-wrapper {
+      background: var(--dr-bg-alt) !important;
       border-color: var(--dr-border) !important;
       color: var(--dr-text) !important;
     }
