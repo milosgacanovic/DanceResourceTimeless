@@ -185,6 +185,47 @@ html[data-theme="dark"] {
     display: block;
 }
 
+.toc {
+  background: var(--dr-bg-alt) !important;
+  border-color: var(--dr-border) !important;
+}
+
+/* =========================================================
+   Wikitable / content-table — light mode
+   ========================================================= */
+.wikitable,
+.mw-datatable,
+.mw_metadata {
+  background: var(--dr-bg-alt) !important;
+  border-color: var(--dr-border) !important;
+  color: var(--dr-text) !important;
+}
+
+.wikitable th,
+.mw_metadata th {
+  background: var(--dr-bg-subtle) !important;
+  border-color: var(--dr-border) !important;
+  color: var(--dr-text) !important;
+}
+
+.wikitable td,
+.mw_metadata td {
+  background: var(--dr-bg-alt) !important;
+  border-color: var(--dr-border) !important;
+  color: var(--dr-text) !important;
+}
+
+.wikitable > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > th,
+.wikitable > * > tr > td {
+  border-color: var(--dr-border) !important;
+}
+
+.content-table-wrapper {
+  border-color: var(--dr-border) !important;
+}
+
 /* =========================================================
    DanceResource Wiki – Welcome page landing polish
    Scope: body.page-Welcome_to_the_DanceResource_Wiki only
@@ -232,9 +273,7 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero {
   margin-top: 18px;
 }
 
-body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero img {
-  opacity: 0.82;
-}
+/* opacity removed — it creates a stacking context that blocks mix-blend-mode */
 
 
 
@@ -335,8 +374,19 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero-inner {
    --------------------------------- */
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero figure {
   margin: 0 0 12px;
-  mix-blend-mode: multiply;
+  position: relative;
   background: transparent !important;
+}
+
+/* Light mode: overlay ::after with multiply to blend white image bg into page bg.
+   White × var(--dr-bg) = var(--dr-bg), so white areas disappear into the background. */
+body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero figure::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--dr-bg);
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero figure *,
@@ -351,7 +401,7 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero img {
   max-width: 180px;
   width: 100%;
   height: auto;
-  opacity: 0.90;
+  display: block;
 }
 
 /* ---------------------------------
@@ -395,16 +445,14 @@ body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero-links {
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
   font-weight: 650;
   border: 0;
   padding: 0;
 }
 
 body.rootpage-Welcome_to_the_DanceResource_Wiki .dr-hero a:hover {
-  text-decoration-thickness: 2px;
+  text-decoration: underline;
 }
 
 /* ---------------------------------
@@ -676,6 +724,17 @@ body.skin-danceresourcetimeless #mw-related-navigation {
   background: var(--dr-bg-alt) !important;
 }
 
+body.skin-danceresourcetimeless #mw-site-navigation a,
+body.skin-danceresourcetimeless #mw-related-navigation a {
+  color: var(--dr-link) !important;
+}
+
+body.skin-danceresourcetimeless #mw-site-navigation a:hover,
+body.skin-danceresourcetimeless #mw-related-navigation a:hover {
+  color: var(--dr-link) !important;
+  text-decoration: underline;
+}
+
 body.skin-danceresourcetimeless .mw-body {
   background: var(--dr-bg) !important;
 }
@@ -777,6 +836,20 @@ html[data-theme="dark"] #mw-searchButton {
   filter: none !important;
 }
 
+/* Personal-inner dropdown links: green in all modes */
+body.skin-danceresourcetimeless #personal-inner a,
+body.skin-danceresourcetimeless #personal-inner a:visited,
+body.skin-danceresourcetimeless #personal-inner a span,
+body.skin-danceresourcetimeless #personal-inner a:visited span {
+  color: var(--dr-link) !important;
+}
+
+body.skin-danceresourcetimeless #personal-inner a:hover,
+body.skin-danceresourcetimeless #personal-inner a:hover span {
+  color: var(--dr-link) !important;
+  text-decoration: underline;
+}
+
 /* =========================
    Personal / username smaller (support both ids)
    ========================= */
@@ -856,7 +929,7 @@ body.skin-danceresourcetimeless #mw-site-navigation a,
 body.skin-danceresourcetimeless #mw-site-navigation a:visited,
 body.skin-danceresourcetimeless #mw-related-navigation a,
 body.skin-danceresourcetimeless #mw-related-navigation a:visited {
-  color: var(--dr-text) !important;
+  color: var(--dr-link) !important;
 }
 
 body.skin-danceresourcetimeless #mw-site-navigation a:hover,
@@ -883,17 +956,41 @@ body.skin-danceresourcetimeless .mw-portlet-body ul li a {
 }
 body.skin-danceresourcetimeless .mw-portlet-body ul li a:hover { background: var(--dr-hover-bg); }
 
-/* Smaller logo above Navigation */
-body.skin-danceresourcetimeless #mw-navigation #p-logo img,
-body.skin-danceresourcetimeless #mw-navigation #p-logo .mw-wiki-logo {
-  max-width: 92px !important;
-  height: auto !important;
-  margin-bottom: 6px !important;
+/* External link icon — replace blue with green, ensure no-repeat */
+.mw-parser-output a.external,
+.link-mailto,
+.link-ftp,
+.link-irc,
+.link-audio,
+.link-video,
+.link-document {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13'%3E%3Cpath fill='%230f8a4a' d='M5.002 1.01h7v7l-2-2-3 2v-1l3-2.25 1 1V2.01h-3.75l1 1-2.25 3h-1l2-3z'/%3E%3Cpath fill='%230f8a4a' d='M7.002 3.01h-5v8h8v-5h-1v4h-6v-6h4z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center right !important;
 }
 
+/* Restore plainlinks suppression overridden by !important above */
+.plainlinks a.external {
+  background-image: none !important;
+  padding-right: 0 !important;
+}
+
+html[data-theme="dark"] .mw-parser-output a.external,
+html[data-theme="dark"] .link-mailto,
+html[data-theme="dark"] .link-ftp,
+html[data-theme="dark"] .link-irc,
+html[data-theme="dark"] .link-audio,
+html[data-theme="dark"] .link-video,
+html[data-theme="dark"] .link-document {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13'%3E%3Cpath fill='%23408657' d='M5.002 1.01h7v7l-2-2-3 2v-1l3-2.25 1 1V2.01h-3.75l1 1-2.25 3h-1l2-3z'/%3E%3Cpath fill='%23408657' d='M7.002 3.01h-5v8h8v-5h-1v4h-6v-6h4z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center right !important;
+}
+
+
 /* Logo blend — light mode: multiply makes white areas disappear into warm bg */
-body.skin-danceresourcetimeless #mw-navigation #p-logo a,
-body.skin-danceresourcetimeless #mw-navigation #p-logo a img {
+body.skin-danceresourcetimeless #mw-site-navigation #p-logo a,
+body.skin-danceresourcetimeless #mw-site-navigation #p-logo a img {
   mix-blend-mode: multiply !important;
   background: transparent !important;
 }
@@ -1555,38 +1652,50 @@ html[data-theme="dark"] td {
   border-color: var(--dr-border) !important;
 }
 
+html[data-theme="dark"] .wikitable,
+html[data-theme="dark"] .mw-datatable,
+html[data-theme="dark"] .mw_metadata {
+  background: var(--dr-bg-alt) !important;
+  color: var(--dr-text) !important;
+}
+
+html[data-theme="dark"] .wikitable th,
+html[data-theme="dark"] .mw_metadata th {
+  background: var(--dr-bg-subtle) !important;
+  color: var(--dr-text) !important;
+}
+
+html[data-theme="dark"] .wikitable td,
+html[data-theme="dark"] .mw_metadata td {
+  background: var(--dr-bg-alt) !important;
+  color: var(--dr-text) !important;
+}
+
 html[data-theme="dark"] th {
   background: var(--dr-bg-subtle) !important;
 }
 
 html[data-theme="dark"] .toc {
-  background: var(--dr-bg-subtle) !important;
+  background: var(--dr-bg-alt) !important;
   border-color: var(--dr-border) !important;
 }
 
-/* Sidebar logo: invert + screen blend in dark mode */
-html[data-theme="dark"] #mw-navigation #p-logo a,
-html[data-theme="dark"] #mw-navigation #p-logo a img {
+/* Sidebar logo: invert in dark mode (black SVG → white) */
+html[data-theme="dark"] #mw-site-navigation #p-logo a,
+html[data-theme="dark"] #mw-site-navigation #p-logo a img {
   filter: invert(1) !important;
-  mix-blend-mode: screen !important;
+  mix-blend-mode: normal !important;
   background: transparent !important;
 }
 
-/* Welcome page hero logo — invert img, screen-blend the figure */
-html[data-theme="dark"] .dr-hero figure {
-  mix-blend-mode: screen !important;
-  background: transparent !important;
+/* Dark mode: disable the light-mode ::after overlay, use filter instead */
+html[data-theme="dark"] .dr-hero figure::after {
+  display: none !important;
 }
 
+/* Welcome page hero logo — filter maps white → ~#181714 (dark bg) */
 html[data-theme="dark"] .dr-hero img {
-  filter: invert(1) !important;
-}
-
-html[data-theme="dark"] .dr-hero .thumbinner,
-html[data-theme="dark"] .dr-hero .thumb,
-html[data-theme="dark"] .dr-hero figure * {
-  background: transparent !important;
-  border: none !important;
+  filter: invert(0.91) hue-rotate(180deg) !important;
 }
 
 /* Sidebar boxes: kill LESS-compiled background/border */
@@ -1602,9 +1711,7 @@ html[data-theme="dark"] .sidebar-inner {
 
 /* Sidebar links readable in dark mode */
 html[data-theme="dark"] #mw-site-navigation,
-html[data-theme="dark"] #mw-site-navigation *,
-html[data-theme="dark"] #mw-related-navigation,
-html[data-theme="dark"] #mw-related-navigation * {
+html[data-theme="dark"] #mw-related-navigation {
   color: var(--dr-text-muted) !important;
 }
 
@@ -1612,7 +1719,7 @@ html[data-theme="dark"] #mw-site-navigation a,
 html[data-theme="dark"] #mw-site-navigation a:visited,
 html[data-theme="dark"] #mw-related-navigation a,
 html[data-theme="dark"] #mw-related-navigation a:visited {
-  color: var(--dr-text) !important;
+  color: var(--dr-link) !important;
 }
 
 html[data-theme="dark"] #mw-site-navigation a:hover,
@@ -1630,8 +1737,28 @@ html[data-theme="dark"] .sidebar-chunk > h2 * {
 html[data-theme="dark"] #personal,
 html[data-theme="dark"] #personal *,
 html[data-theme="dark"] #p-personal,
-html[data-theme="dark"] #p-personal * {
+html[data-theme="dark"] #p-personal *,
+html[data-theme="dark"] #personal-inner,
+html[data-theme="dark"] #personal-inner * {
   color: var(--dr-text-muted) !important;
+}
+
+html[data-theme="dark"] #personal-inner {
+  background: var(--dr-bg-alt) !important;
+  border-color: var(--dr-border) !important;
+}
+
+html[data-theme="dark"] #personal-inner a,
+html[data-theme="dark"] #personal-inner a:visited,
+html[data-theme="dark"] #personal-inner a span,
+html[data-theme="dark"] #personal-inner a:visited span {
+  color: var(--dr-link) !important;
+}
+
+html[data-theme="dark"] #personal-inner a:hover,
+html[data-theme="dark"] #personal-inner a:hover span {
+  color: var(--dr-link) !important;
+  text-decoration: underline;
 }
 
 html[data-theme="dark"] #dr-theme-toggle {
@@ -1740,31 +1867,43 @@ html[data-theme="dark"] .search-types {
   }
 
   html:not([data-theme]) .toc {
-    background: var(--dr-bg-subtle) !important;
+    background: var(--dr-bg-alt) !important;
     border-color: var(--dr-border) !important;
   }
 
-  html:not([data-theme]) #mw-navigation #p-logo a,
-  html:not([data-theme]) #mw-navigation #p-logo a img {
+  html:not([data-theme]) .wikitable,
+  html:not([data-theme]) .mw-datatable,
+  html:not([data-theme]) .mw_metadata {
+    background: var(--dr-bg-alt) !important;
+    color: var(--dr-text) !important;
+    border-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) .wikitable th,
+  html:not([data-theme]) .mw_metadata th {
+    background: var(--dr-bg-subtle) !important;
+    color: var(--dr-text) !important;
+  }
+
+  html:not([data-theme]) .wikitable td,
+  html:not([data-theme]) .mw_metadata td {
+    background: var(--dr-bg-alt) !important;
+    color: var(--dr-text) !important;
+  }
+
+  html:not([data-theme]) #mw-site-navigation #p-logo a,
+  html:not([data-theme]) #mw-site-navigation #p-logo a img {
     filter: invert(1) !important;
-    mix-blend-mode: screen !important;
+    mix-blend-mode: normal !important;
     background: transparent !important;
   }
 
-  html:not([data-theme]) .dr-hero figure {
-    mix-blend-mode: screen !important;
-    background: transparent !important;
+  html:not([data-theme]) .dr-hero figure::after {
+    display: none !important;
   }
 
   html:not([data-theme]) .dr-hero img {
-    filter: invert(1) !important;
-  }
-
-  html:not([data-theme]) .dr-hero .thumbinner,
-  html:not([data-theme]) .dr-hero .thumb,
-  html:not([data-theme]) .dr-hero figure * {
-    background: transparent !important;
-    border: none !important;
+    filter: invert(0.91) hue-rotate(180deg) !important;
   }
 
   html:not([data-theme]) .sidebar-chunk {
@@ -1778,9 +1917,7 @@ html[data-theme="dark"] .search-types {
   }
 
   html:not([data-theme]) #mw-site-navigation,
-  html:not([data-theme]) #mw-site-navigation *,
-  html:not([data-theme]) #mw-related-navigation,
-  html:not([data-theme]) #mw-related-navigation * {
+  html:not([data-theme]) #mw-related-navigation {
     color: var(--dr-text-muted) !important;
   }
 
@@ -1788,7 +1925,7 @@ html[data-theme="dark"] .search-types {
   html:not([data-theme]) #mw-site-navigation a:visited,
   html:not([data-theme]) #mw-related-navigation a,
   html:not([data-theme]) #mw-related-navigation a:visited {
-    color: var(--dr-text) !important;
+    color: var(--dr-link) !important;
   }
 
   html:not([data-theme]) #mw-site-navigation a:hover,
@@ -1804,8 +1941,22 @@ html[data-theme="dark"] .search-types {
   html:not([data-theme]) #personal,
   html:not([data-theme]) #personal *,
   html:not([data-theme]) #p-personal,
-  html:not([data-theme]) #p-personal * {
+  html:not([data-theme]) #p-personal *,
+  html:not([data-theme]) #personal-inner,
+  html:not([data-theme]) #personal-inner * {
     color: var(--dr-text-muted) !important;
+  }
+
+  html:not([data-theme]) #personal-inner {
+    background: var(--dr-bg-alt) !important;
+    border-color: var(--dr-border) !important;
+  }
+
+  html:not([data-theme]) #personal-inner a,
+  html:not([data-theme]) #personal-inner a:visited,
+  html:not([data-theme]) #personal-inner a span,
+  html:not([data-theme]) #personal-inner a:visited span {
+    color: var(--dr-link) !important;
   }
 
   html:not([data-theme]) #mw-header-container {
