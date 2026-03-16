@@ -2158,3 +2158,44 @@ html[data-theme="dark"] .search-types {
     background-image: none !important;
   }
 }
+
+/* =========================================================
+   Special:Search page
+   ========================================================= */
+
+/* Profile tabs (Content pages / Multimedia / …) */
+.mw-search-profile-tabs {
+  background: var(--dr-bg-alt) !important;
+  border-color: var(--dr-border) !important;
+}
+
+/* Search button: match site green (OOUI progressive button) */
+.oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
+  background-color: var(--dr-link) !important;
+  border-color: var(--dr-link) !important;
+  color: #fff !important;
+}
+
+.oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:hover {
+  filter: brightness(0.88);
+}
+
+/* Clear (×) button: nudge down */
+.oo-ui-textInputWidget .oo-ui-indicatorElement-indicator {
+  margin-top: 6px !important;
+}
+
+/* Dark mode: lighten search icon, clear (×) button, and Help (?) link */
+html[data-theme="dark"] .oo-ui-icon-search,
+html[data-theme="dark"] .oo-ui-indicator-clear,
+html[data-theme="dark"] .mw-helplink {
+  filter: invert(0.7) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .oo-ui-icon-search,
+  html:not([data-theme]) .oo-ui-indicator-clear,
+  html:not([data-theme]) .mw-helplink {
+    filter: invert(0.7) !important;
+  }
+}
