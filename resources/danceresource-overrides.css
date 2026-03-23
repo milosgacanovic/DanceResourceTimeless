@@ -2199,3 +2199,15 @@ html[data-theme="dark"] .mw-helplink {
     filter: invert(0.7) !important;
   }
 }
+
+/* =========================================================
+   Search: hide Translate extension language filter + our banner (for now)
+   ========================================================= */
+.mw-search-language-banner {
+  display: none;
+}
+
+/* Hide the Translate extension's "Filtriranje po jeziku:" language filter dropdown */
+#mw-searchoptions:has(#languagefilter) {
+  display: none;
+}
